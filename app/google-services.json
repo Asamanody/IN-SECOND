@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "73457591673",
+    "project_id": "in-second",
+    "storage_bucket": "in-second.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73457591673:android:f349c81fbdcb0c82fc7ba8",
+        "android_client_info": {
+          "package_name": "com.example.insecondapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73457591673-lt93am994p0h91d3usneldk8vneritd9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjKZCk_I_lyv2ELPsQO_gB86KTXYUBJ2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73457591673-lt93am994p0h91d3usneldk8vneritd9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

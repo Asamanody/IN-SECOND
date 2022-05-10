@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/spalshScreenFragment">
+
+    <fragment
+        android:id="@+id/spalshScreenFragment"
+        android:name="com.example.insecondapp.SpalshScreenFragment"
+        android:label="fragment_spalsh_screen"
+        tools:layout="@layout/fragment_spalsh_screen" >
+        <action
+            android:id="@+id/action_spalshScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.insecondapp.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_phoneAuthFragment"
+            app:destination="@id/phoneAuthFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneAuthFragment"
+        android:name="com.example.insecondapp.PhoneAuthFragment"
+        android:label="fragment_phone_auth"
+        tools:layout="@layout/fragment_phone_auth" >
+        <action
+            android:id="@+id/action_phoneAuthFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+</navigation>
