@@ -1,10 +1,11 @@
-package com.example.insecondapp
+package com.example.insecondapp.ui.home
 
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.insecondapp.R
 
 import com.example.insecondapp.databinding.ActivityHomeBinding
 

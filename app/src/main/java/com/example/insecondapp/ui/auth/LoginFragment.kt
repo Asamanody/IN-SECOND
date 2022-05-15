@@ -1,4 +1,4 @@
-package com.example.insecondapp
+package com.example.insecondapp.ui.auth
 
 
 import androidx.navigation.Navigation.findNavController
@@ -14,8 +14,11 @@ import com.bumptech.glide.Glide
 
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.insecondapp.R
 import com.example.insecondapp.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     var phoneAnim: Animation? = null
     var googleAnim: Animation? = null

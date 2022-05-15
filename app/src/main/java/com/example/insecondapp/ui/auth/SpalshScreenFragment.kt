@@ -1,22 +1,21 @@
-package com.example.insecondapp
+package com.example.insecondapp.ui.auth
 
 import androidx.navigation.Navigation.findNavController
 import com.example.insecondapp.storage.SeesionManager
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.os.Bundle
-import android.view.animation.Animation
 import com.example.insecondapp.R
-import java.lang.Runnable
-import androidx.navigation.NavController
 import android.content.Intent
 import android.os.Handler
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
-import com.example.insecondapp.HomeActivity
+import com.example.insecondapp.ui.home.HomeActivity
 import com.example.insecondapp.databinding.FragmentSpalshScreenBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SpalshScreenFragment : Fragment() {
     private var mBinding: FragmentSpalshScreenBinding? = null
     var seesionManager: SeesionManager? = null

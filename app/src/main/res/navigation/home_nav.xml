@@ -8,12 +8,12 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.insecondapp.ProfileFragment"
+        android:name="com.example.insecondapp.ui.home.ProfileFragment"
         android:label="profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.insecondapp.HomeFragment"
+        android:name="com.example.insecondapp.ui.home.HomeFragment"
         android:label="home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/ordersFragment"
-        android:name="com.example.insecondapp.OrdersFragment"
+        android:name="com.example.insecondapp.ui.home.OrdersFragment"
         android:label="orders"
         tools:layout="@layout/fragment_orders" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.example.insecondapp.ChatFragment"
+        android:name="com.example.insecondapp.ui.home.ChatFragment"
         android:label="fragment"
         tools:layout="@layout/chat_fragment" >
         <action

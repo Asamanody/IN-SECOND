@@ -1,4 +1,4 @@
-package com.example.insecondapp
+package com.example.insecondapp.ui.auth
 
 import com.example.insecondapp.repos.FirbaseRepo.Companion.firbaseRepoInstance
 import androidx.navigation.Navigation.findNavController
@@ -13,8 +13,6 @@ import android.view.ViewGroup
 import android.os.Bundle
 import com.google.android.gms.tasks.OnCompleteListener
 import android.util.Log
-import com.example.insecondapp.PhoneAuthFragment
-import com.hbb20.CountryCodePicker.OnCountryChangeListener
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.DataSnapshot
 import android.widget.Toast
@@ -30,10 +28,14 @@ import android.text.TextUtils
 import android.content.Intent
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.insecondapp.ui.home.HomeActivity
+import com.example.insecondapp.R
 import com.example.insecondapp.databinding.FragmentPhoneAuthBinding
 import com.example.insecondapp.models.User
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
 
+@AndroidEntryPoint
 class PhoneAuthFragment : Fragment() {
     lateinit var phoneAuthBinding: FragmentPhoneAuthBinding
     var selected_country_code = "+91"
@@ -111,6 +113,9 @@ class PhoneAuthFragment : Fragment() {
 
             ///check user in the database return true and return data
             val check_user = databaseReference!!.orderByChild("phone_number").equalTo(phoneNumber)
+
+
+
 
             check_user.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
