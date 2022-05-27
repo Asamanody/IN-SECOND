@@ -5,7 +5,7 @@ import com.example.insecondapp.models.User
 import java.util.HashMap
 import javax.inject.Inject
 
-class SessionManager@Inject
+class SessionManager @Inject
 constructor(
     val sharedPreferences: SharedPreferences,
     val editor: SharedPreferences.Editor
@@ -21,7 +21,7 @@ constructor(
     }
 
     suspend fun createSeesion(
-        user : User
+        user: User
     ) {
 
         editor.putBoolean(login, true)
@@ -33,9 +33,9 @@ constructor(
         editor.apply()
     }
 
-    suspend fun  getUserDetails () : HashMap<String, String?> {
+    suspend fun getUserDetails(): HashMap<String, String?> {
 
-        val user = HashMap<String, String?> ()
+        val user = HashMap<String, String?>()
         user.put(deviceToken, sharedPreferences.getString(deviceToken, null));
         user.put(userPhone, sharedPreferences.getString(userPhone, null));
         user.put(userId, sharedPreferences.getString(userId, null));
@@ -46,12 +46,18 @@ constructor(
     }
 
     //if login in the data saved in sharedprefrenace
-    val isLogin: Boolean
-        get() = if (sharedPreferences.getBoolean(login, true)) {
+    fun isLogin(): Boolean {
+        return if (sharedPreferences.getBoolean(login, true)) {
             true
         } else {
             false
+
+
         }
+
+
+    }
+
     suspend fun logoutUserFromSeesion() {
         editor.clear()
         editor.commit()

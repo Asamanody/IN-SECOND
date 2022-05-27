@@ -21,10 +21,13 @@ object AppModule {
         return context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
     }
 
+
     @Singleton
     @Provides
     fun provideEditor(sharedPreferences: SharedPreferences) : SharedPreferences.Editor{
         return sharedPreferences.edit()
 
     }
+
+
 }

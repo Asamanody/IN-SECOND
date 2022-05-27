@@ -13,5 +13,8 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // hide statue bar
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+
+
     }
 }

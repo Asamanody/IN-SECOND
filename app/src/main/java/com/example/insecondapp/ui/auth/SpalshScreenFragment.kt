@@ -17,8 +17,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SpalshScreenFragment : Fragment() {
-    private var mBinding: FragmentSpalshScreenBinding? = null
+    lateinit var mBinding: FragmentSpalshScreenBinding
     var seesionManager: SeesionManager? = null
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +36,7 @@ class SpalshScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // Restore instance state
         savedInstanceState?.let { onViewStateRestored(it) }
-        seesionManager = SeesionManager(activity!!)
+        seesionManager = SeesionManager(requireActivity())
         runAnimation()
 
         //moveToLoginPage();
@@ -52,7 +54,7 @@ class SpalshScreenFragment : Fragment() {
 
     // animation in the spalsh screen
     private fun runAnimation() {
-        val a = AnimationUtils.loadAnimation(activity!!.applicationContext, R.anim.up_animation)
+        val a = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.up_animation)
         mBinding!!.appNameTv.animation = a
     }
 
@@ -62,8 +64,9 @@ class SpalshScreenFragment : Fragment() {
     }
 
     private fun navigateToNextFrag() {
-        val navController = findNavController(view!!)
+        val navController = findNavController(requireView())
         navController.navigate(R.id.action_spalshScreenFragment_to_loginFragment)
+       // navController.navigate(R.id.action_spalshScreenFragment_to_phoneAuthFragment)
     }
 
     private fun moveToHomepage() {
@@ -71,7 +74,7 @@ class SpalshScreenFragment : Fragment() {
         handler.postDelayed({
             val intent = Intent(activity, HomeActivity::class.java)
             startActivity(intent)
-            activity!!.finish()
+            requireActivity().finish()
         }, 3000)
 
     }

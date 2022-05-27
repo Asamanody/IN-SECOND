@@ -20,15 +20,14 @@ constructor(private val sessionManager: SessionManager )
 
 
     val _userDetails = MutableLiveData<HashMap<String,String?>>()
-    val userDetails : LiveData<HashMap<String,String?>>
-        get() = _userDetails
-    val isLogin = sessionManager.isLogin
+    val userDetails = _userDetails
+     val isLogin = sessionManager.isLogin()
 
     init {
         getUserDetails()
     }
 
-    fun createSeesion (user: User)= viewModelScope.launch(Dispatchers.IO)
+    fun createSeesion(user: User)= viewModelScope.launch(Dispatchers.IO)
     {
         sessionManager.createSeesion(user)
     }

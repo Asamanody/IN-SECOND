@@ -20,9 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
-    var phoneAnim: Animation? = null
-    var googleAnim: Animation? = null
-    private var loginBinding: FragmentLoginBinding? = null
+   // var phoneAnim: Animation? = null
+    lateinit var loginBinding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

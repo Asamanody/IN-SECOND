@@ -1,6 +1,5 @@
 package com.example.insecondapp.ui.auth
 
-import com.example.insecondapp.repos.FirbaseRepo.Companion.firbaseRepoInstance
 import androidx.navigation.Navigation.findNavController
 
 import com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken
@@ -32,6 +31,10 @@ import com.example.insecondapp.ui.home.HomeActivity
 import com.example.insecondapp.R
 import com.example.insecondapp.databinding.FragmentPhoneAuthBinding
 import com.example.insecondapp.models.User
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.ktx.messaging
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
 
@@ -43,10 +46,15 @@ class PhoneAuthFragment : Fragment() {
     var codeByUSer: String? = null
 
     /////////////////firbase phone auth /////////////////
-    private var mVerificationInProgress = false // لو الفيريفاى شغال
+    private var mVerificationInProgress = false
     private var mVerificationId: String? = null
     private lateinit var mResendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var mCallbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
+
+//
+    val mAuth = Firebase.auth
+    val database = Firebase.database
+    val firebaseMessaging = Firebase.messaging
 
     /////user in server////
     private lateinit var user: FirebaseUser
@@ -83,14 +91,15 @@ class PhoneAuthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         savedInstanceState?.let { onViewStateRestored(it) }
 
+
         //////seesionManager//////
         seesionManager = SeesionManager(activity!!)
 
         ///////users root
-        databaseReference = firbaseRepoInstance.database.getReference("users")
+        databaseReference = database.getReference("users")
 
         ///////////get device token//////
-        firbaseRepoInstance!!.firebaseMessaging.token.addOnCompleteListener(OnCompleteListener { task ->
+        firebaseMessaging.token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
                 Log.w(TAG, "Fetching FCM registration token failed", task.exception)
                 return@OnCompleteListener
@@ -113,9 +122,6 @@ class PhoneAuthFragment : Fragment() {
 
             ///check user in the database return true and return data
             val check_user = databaseReference!!.orderByChild("phone_number").equalTo(phoneNumber)
-
-
-
 
             check_user.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -241,10 +247,8 @@ class PhoneAuthFragment : Fragment() {
         }
     }
 
-
-
     private fun sendVerficationCodeToUser(phoneNumber: String) {
-        val options = PhoneAuthOptions.newBuilder(firbaseRepoInstance!!.mAuth)
+        val options = PhoneAuthOptions.newBuilder(mAuth)
             .setPhoneNumber(phoneNumber) // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
             .setActivity(activity!!) // Activity (for callback binding)
@@ -254,7 +258,7 @@ class PhoneAuthFragment : Fragment() {
     }
 
     private fun resendVerificationCode(phoneNumber: String, token: ForceResendingToken?) {
-        val options = PhoneAuthOptions.newBuilder(firbaseRepoInstance!!.mAuth)
+        val options = PhoneAuthOptions.newBuilder(mAuth)
             .setPhoneNumber(phoneNumber) // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
             .setActivity(activity!!) // Activity (for callback binding)
@@ -270,7 +274,7 @@ class PhoneAuthFragment : Fragment() {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-        firbaseRepoInstance!!.mAuth.signInWithCredential(credential)
+        mAuth.signInWithCredential(credential)
             .addOnCompleteListener(activity!!) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
@@ -316,7 +320,7 @@ class PhoneAuthFragment : Fragment() {
     }
 
     private fun signOut() {
-        firbaseRepoInstance!!.mAuth.signOut()
+        mAuth.signOut()
         backToLoginFragment()
     }
 

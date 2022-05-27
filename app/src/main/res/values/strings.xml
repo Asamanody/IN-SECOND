@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">فى ثانيه </string>
+    <string name="app_name">IN SECOND</string>
 
     <string name="auth_with_phone">استمرار بالهاتف </string>
     <string name="askToEnterPhoneMessage">ادخل رقم هاتفك </string>
@@ -15,5 +15,13 @@
     <string name="make_sure_text">أدخل رقمك لانشاء حساب جديد او لتسجيل الدخول </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_name">ahmed esam mohamed</string>
+    <string name="my_account">my Account</string>
+    <string name="make_changes_to_your_account">make changes to your account</string>
+    <string name="account">Account</string>
+    <string name="mange_you_billings_and_discounts">mange you billings and discounts</string>
+    <string name="payment">payment</string>
+    <string name="see_your_orders_history">see your orders history</string>
+    <string name="orders">orders</string>
 
 </resources>
