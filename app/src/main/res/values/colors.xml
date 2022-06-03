@@ -12,4 +12,5 @@
     <color name="app_background">#FFC42A</color>
     <color name="all_text_color_black">#1F1F1F</color>
     <color name="all_text_color_white">#FFFFFF</color>
+    <color name="red">#d50000</color>
 </resources>

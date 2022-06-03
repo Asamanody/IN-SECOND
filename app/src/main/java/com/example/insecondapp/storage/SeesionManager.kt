@@ -52,12 +52,14 @@ class SeesionManager(var context: Context) {
             return user
         }
 
-    val isLogin: Boolean
-        get() = if (sharedPreferences.getBoolean(login, true)) {
+    fun isLogin(): Boolean{
+        return  if (sharedPreferences.getBoolean(login, true)) {
             true
         } else {
             false
         }
+    }
+
 
     fun logoutUserFromSeesion() {
         editor.clear()

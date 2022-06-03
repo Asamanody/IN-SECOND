@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-         initViewPager()
+        initViewPager()
 
 
 
@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
 
 
     fun initImages() :List<Int>{
-        val images = listOf(R.drawable.first,
+        val images = listOf(R.drawable.image1,
             R.drawable.second,
             R.drawable.thered)
         return images

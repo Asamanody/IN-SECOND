@@ -333,7 +333,7 @@ class PhoneAuthFragment : Fragment() {
     }
 
     private fun updateUi() {
-        phoneAuthBinding?.apply {
+        phoneAuthBinding.apply {
             countryCodePicker.visibility = View.INVISIBLE
             phoneNumEdt.visibility = View.INVISIBLE
             textView.visibility = View.INVISIBLE

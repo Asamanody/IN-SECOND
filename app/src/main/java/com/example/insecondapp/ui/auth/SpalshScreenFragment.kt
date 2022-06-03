@@ -45,7 +45,7 @@ class SpalshScreenFragment : Fragment() {
 
     //check if the user register or not from sharedPrefrence
     private fun checkUserStatus() {
-        if (seesionManager!!.isLogin) {
+        if (seesionManager!!.isLogin()) {
             moveToHomepage()
         } else {
             moveToLoginPage()

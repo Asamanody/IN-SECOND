@@ -1,18 +1,19 @@
 <resources>
     <string name="app_name">IN SECOND</string>
 
-    <string name="auth_with_phone">استمرار بالهاتف </string>
-    <string name="askToEnterPhoneMessage">ادخل رقم هاتفك </string>
+    <string name="auth_with_phone">continue with phone</string>
+    <string name="askToEnterPhoneMessage">enter your phone message </string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="title_activity_home">الرئيسية</string>
+    <string name="title_activity_home">Home</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="continue_button">استمرار</string>
-    <string name="verify_button">تحقق</string>
-    <string name="enter_your_phone_number">أدخل رقم هاتفك</string>
-    <string name="make_sure_text">أدخل رقمك لانشاء حساب جديد او لتسجيل الدخول </string>
+    <string name="continue_button">continue</string>
+    <string name="verify_button">verify</string>
+    <string name="enter_your_phone_number">enter your phone number</string>
+    <string name="make_sure_text">enter your number to Craete Account or login</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_name">ahmed esam mohamed</string>
@@ -23,5 +24,19 @@
     <string name="payment">payment</string>
     <string name="see_your_orders_history">see your orders history</string>
     <string name="orders">orders</string>
+    <string name="help">help</string>
+    <string name="see_your_notifications">see your notifications</string>
+    <string name="notifications">notifications</string>
+    <string name="get_help_from_app_team">get help from app team</string>
+    <string name="if_you_like_the_app_rate_it">if you like the app rate it</string>
+    <string name="rate">rate</string>
+    <string name="rate_app">rate app</string>
+    <string name="join_in_second_captains">join in second captains</string>
+    <string name="join_us">join us</string>
+    <string name="sign_out">sign out</string>
+    <string name="log_out">log out</string>
+    <string name="order_now">order now</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="choose_your_order">choose your order</string>
 
 </resources>
