@@ -25,17 +25,15 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViewPager()
-
 
 
     }
 
-
-    fun initImages() :List<Int>{
-        val images = listOf(R.drawable.image1,
-            R.drawable.second,
-            R.drawable.thered)
+/* fun initImages() :List<Int>{
+        val images = listOf(
+            R.drawable.image1,
+            R.drawable.second
+           )
         return images
     }
     fun initViewPager(){
@@ -44,5 +42,5 @@ class HomeFragment : Fragment() {
         viewPager.adapter= viewPagerAdapter
         val indicator = mBinding.indicator
         indicator.setViewPager(viewPager)
-    }
+    }*/
 }

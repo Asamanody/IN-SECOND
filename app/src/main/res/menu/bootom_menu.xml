@@ -4,18 +4,18 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="home" />
+        android:title="@string/home" />
 
     <item
         android:id="@+id/ordersFragment"
         android:icon="@drawable/ic_baseline_shopping_cart1_24"
-        android:title="orders" />
+        android:title="@string/orders" />
     <item
         android:id="@+id/chatFragment"
         android:icon="@drawable/ic_baseline_chat_24"
-        android:title="chat" />
+        android:title="@string/chat" />
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/outline_person_24"
-        android:title="profile" />
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/profile" />
 </menu>

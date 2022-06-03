@@ -56,8 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/outline_person_24"
-            tools:src="@color/dark_gray" />
+            app:srcCompat="@drawable/ic_account" />
 
         <TextView
             android:id="@+id/my_account_tv"
@@ -109,7 +108,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/dark_gray" />
+            app:srcCompat="@drawable/ic_credit_card1" />
 
         <TextView
             android:id="@+id/payment_tv"
@@ -161,8 +160,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_shopping_cart1_24"
-            tools:src="@color/dark_gray" />
+            app:srcCompat="@drawable/ic_orders" />
 
         <TextView
             android:id="@+id/orders_tv"
@@ -214,7 +212,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@color/dark_gray" />
+            app:srcCompat="@drawable/ic_notifications" />
 
         <TextView
             android:id="@+id/notifications_tv"
@@ -266,7 +264,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/dark_gray" />
+            app:srcCompat="@drawable/ic_support" />
 
         <TextView
             android:id="@+id/help_tv"
@@ -317,8 +315,7 @@
             android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/dark_gray" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/rate_app_tv"
@@ -369,8 +366,7 @@
             android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/dark_gray" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/join_us_tv"
@@ -410,7 +406,7 @@
         android:id="@+id/sign_out_layout"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="@+id/joinUs_layout"
         app:layout_constraintTop_toBottomOf="@+id/joinUs_layout">
 
@@ -421,14 +417,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/dark_gray" />
+            app:srcCompat="@drawable/ic_logout1" />
 
         <TextView
             android:id="@+id/sign_out_tv"
             style="@style/smallText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
             android:text="@string/log_out"
             android:textAppearance="@style/smallText1"

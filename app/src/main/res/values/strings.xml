@@ -38,5 +38,8 @@
     <string name="order_now">order now</string>
     <string name="good_morning">Good Morning</string>
     <string name="choose_your_order">choose your order</string>
+    <string name="profile">profile</string>
+    <string name="home">home</string>
+    <string name="chat">chat</string>
 
 </resources>
