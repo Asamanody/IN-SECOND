@@ -14,13 +14,17 @@ import androidx.fragment.app.Fragment
 import com.example.insecondapp.ui.home.HomeActivity
 import com.example.insecondapp.databinding.FragmentSpalshScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SpalshScreenFragment : Fragment() {
     lateinit var mBinding: FragmentSpalshScreenBinding
     var seesionManager: SeesionManager? = null
 
-
+    val activityScope = CoroutineScope(Dispatchers.Main)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,6 +41,8 @@ class SpalshScreenFragment : Fragment() {
         // Restore instance state
         savedInstanceState?.let { onViewStateRestored(it) }
         seesionManager = SeesionManager(requireActivity())
+        val activityScope = CoroutineScope(Dispatchers.Main)
+
         runAnimation()
 
         //moveToLoginPage();
@@ -54,28 +60,34 @@ class SpalshScreenFragment : Fragment() {
 
     // animation in the spalsh screen
     private fun runAnimation() {
-        val a = AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.up_animation)
+        val a =
+            AnimationUtils.loadAnimation(requireActivity().applicationContext, R.anim.up_animation)
         mBinding!!.appNameTv.animation = a
     }
 
     private fun moveToLoginPage() {
-        val handler = Handler()
-        handler.postDelayed({ navigateToNextFrag() }, 3000)
+        activityScope.launch {
+            delay(3000)
+            navigateToNextFrag()
+        }
+
+
     }
 
     private fun navigateToNextFrag() {
         val navController = findNavController(requireView())
         navController.navigate(R.id.action_spalshScreenFragment_to_loginFragment)
-       // navController.navigate(R.id.action_spalshScreenFragment_to_phoneAuthFragment)
+        // navController.navigate(R.id.action_spalshScreenFragment_to_phoneAuthFragment)
     }
 
+
     private fun moveToHomepage() {
-        val handler = Handler()
-        handler.postDelayed({
+        activityScope.launch {
+            delay(3000)
             val intent = Intent(activity, HomeActivity::class.java)
             startActivity(intent)
             requireActivity().finish()
-        }, 3000)
+        }
 
     }
 }

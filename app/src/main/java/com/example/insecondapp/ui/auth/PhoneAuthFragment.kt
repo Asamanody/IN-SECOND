@@ -40,42 +40,42 @@ import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class PhoneAuthFragment : Fragment() {
-    lateinit var phoneAuthBinding: FragmentPhoneAuthBinding
-    var selected_country_code = "+91"
-    var phoneNumber = "999999999"
-    var codeByUSer: String? = null
+    lateinit var phoneAuthBinding: FragmentPhoneAuthBinding //1
+    var selected_country_code = "+91"//1
+    var phoneNumber = "999999999"//1
+    var codeByUSer: String? = null  //1
 
     /////////////////firbase phone auth /////////////////
-    private var mVerificationInProgress = false
+    private var mVerificationInProgress = false //1
     private var mVerificationId: String? = null
     private lateinit var mResendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var mCallbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
-//
+
     val mAuth = Firebase.auth
     val database = Firebase.database
     val firebaseMessaging = Firebase.messaging
 
     /////user in server////
-    private lateinit var user: FirebaseUser
-    private lateinit var userId: String
-    private lateinit var userCreated: String
+    private lateinit var user: FirebaseUser //1
+    private lateinit var userId: String         //1
+    private lateinit var userCreated: String    //1
 
     ////session manager /////
     lateinit var seesionManager: SeesionManager
 
     //////database refrence////
-    lateinit var databaseReference: DatabaseReference
+    lateinit var databaseReference: DatabaseReference       //1
 
     ////fcm/////
-    var deviceToken: String? = null
+    var deviceToken: String? = null //1
 
 
     // user data if already register
-    lateinit var userData:User
+    lateinit var userData:User      //0
 
     //user data first to register
-    lateinit var firstUserData :User
+    lateinit var firstUserData :User //0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -84,12 +84,14 @@ class PhoneAuthFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         phoneAuthBinding = FragmentPhoneAuthBinding.inflate(inflater, container, false)
-        return phoneAuthBinding!!.root
+        return phoneAuthBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         savedInstanceState?.let { onViewStateRestored(it) }
+
+
 
 
         //////seesionManager//////
@@ -109,24 +111,23 @@ class PhoneAuthFragment : Fragment() {
             deviceToken = task.result
         })
 
-        phoneAuthBinding!!.countryCodePicker.setOnCountryChangeListener {
+        phoneAuthBinding.countryCodePicker.setOnCountryChangeListener {
             //set the country code of the user
-            selected_country_code = phoneAuthBinding!!.countryCodePicker.selectedCountryCodeWithPlus
+            selected_country_code = phoneAuthBinding.countryCodePicker.selectedCountryCodeWithPlus
         }
-        phoneAuthBinding!!.btnContinue.setOnClickListener(View.OnClickListener {
-            phoneNumber = selected_country_code + phoneAuthBinding!!.phoneNumEdt.text.toString()
+        phoneAuthBinding.btnContinue.setOnClickListener(View.OnClickListener {
+            phoneNumber = selected_country_code + phoneAuthBinding.phoneNumEdt.text.toString()
                 .trim { it <= ' ' }
             if (!validatePhoneNumber()) {
                 return@OnClickListener
             }
 
             ///check user in the database return true and return data
-            val check_user = databaseReference!!.orderByChild("phone_number").equalTo(phoneNumber)
+            val check_user = databaseReference.orderByChild("phone_number").equalTo(phoneNumber)
 
             check_user.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
-
 
                         //user already registered
 
@@ -180,7 +181,9 @@ class PhoneAuthFragment : Fragment() {
             })
         })
 
-        phoneAuthBinding!!.resendTv.setOnClickListener {
+
+
+        phoneAuthBinding.resendTv.setOnClickListener {
             resendVerificationCode(
                 phoneNumber,
                 mResendToken
@@ -209,11 +212,11 @@ class PhoneAuthFragment : Fragment() {
                 mVerificationInProgress = false
                 if (e is FirebaseAuthInvalidCredentialsException) {
                     // Invalid request
-                    phoneAuthBinding!!.textView2.text = "Invalid phone number."
+                    phoneAuthBinding.textView2.text = "Invalid phone number."
                 } else if (e is FirebaseTooManyRequestsException) {
                     // The SMS quota for the project has been exceeded
                     Snackbar.make(
-                        phoneAuthBinding!!.textView, "Quota exceeded.",
+                        phoneAuthBinding.textView, "Quota exceeded.",
                         Snackbar.LENGTH_SHORT
                     ).show()
                 }
@@ -239,20 +242,21 @@ class PhoneAuthFragment : Fragment() {
             }
         }
 
-        phoneAuthBinding!!.btnVerify.setOnClickListener {
+        phoneAuthBinding.btnVerify.setOnClickListener {
 
-            codeByUSer = phoneAuthBinding!!.firstPinView.text.toString()
+            codeByUSer = phoneAuthBinding.firstPinView.text.toString()
 
             verifyPhoneNumberWithCode(mVerificationId, codeByUSer!!)
         }
     }
+
 
     private fun sendVerficationCodeToUser(phoneNumber: String) {
         val options = PhoneAuthOptions.newBuilder(mAuth)
             .setPhoneNumber(phoneNumber) // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
             .setActivity(activity!!) // Activity (for callback binding)
-            .setCallbacks(mCallbacks!!) // OnVerificationStateChangedCallbacks
+            .setCallbacks(mCallbacks) // OnVerificationStateChangedCallbacks
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
@@ -262,7 +266,7 @@ class PhoneAuthFragment : Fragment() {
             .setPhoneNumber(phoneNumber) // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
             .setActivity(activity!!) // Activity (for callback binding)
-            .setCallbacks(mCallbacks!!) // OnVerificationStateChangedCallbacks
+            .setCallbacks(mCallbacks) // OnVerificationStateChangedCallbacks
             .setForceResendingToken(token!!) // ForceResendingToken from callbacks
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
@@ -280,9 +284,11 @@ class PhoneAuthFragment : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
                     Toast.makeText(activity, "sign In success", Toast.LENGTH_SHORT).show()
+
+                    //get this data in the view Model and store it in objects
                     user = task.result.user!!
-                    userId = user!!.uid
-                    userCreated = user!!.metadata!!.creationTimestamp.toString()
+                    userId = user.uid
+                    userCreated = user.metadata!!.creationTimestamp.toString()
 
 
                     // register this user data in the database
@@ -291,9 +297,9 @@ class PhoneAuthFragment : Fragment() {
                         firstUserData = User(
                             it,
                             phoneNumber,
-                            userId!!,
+                            userId,
                             "ahmed",
-                            userCreated!!)
+                            userCreated)
 
                         writeNewUserToDataBase(firstUserData)
                     }
@@ -313,7 +319,7 @@ class PhoneAuthFragment : Fragment() {
                     backToLoginFragment()
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         // The verification code entered was invalid
-                        phoneAuthBinding!!.textView2.error = "Invalid code."
+                        phoneAuthBinding.textView2.error = "Invalid code."
                     }
                 }
             }
@@ -325,8 +331,8 @@ class PhoneAuthFragment : Fragment() {
     }
 
     private fun validatePhoneNumber(): Boolean {
-        if (TextUtils.isEmpty(phoneAuthBinding!!.phoneNumEdt.text.toString())) {
-            phoneAuthBinding!!.textView.error = "Invalid phone number."
+        if (TextUtils.isEmpty(phoneAuthBinding.phoneNumEdt.text.toString())) {
+            phoneAuthBinding.textView.error = "Invalid phone number."
             return false
         }
         return true
@@ -350,13 +356,13 @@ class PhoneAuthFragment : Fragment() {
 
     }
 
-    //if sign in faild
+    //if sign in faild make life data Boolean
     private fun backToLoginFragment() {
         val navController = findNavController(view!!)
         navController.navigate(R.id.action_phoneAuthFragment_to_loginFragment)
     }
 
-    // if sign in succes or if the user is already register
+    // if sign in succes or if the user is already register make liveDataBoolean
     private fun moveToHomeActivity() {
         val intent = Intent(activity, HomeActivity::class.java)
         startActivity(intent)
@@ -367,14 +373,14 @@ class PhoneAuthFragment : Fragment() {
     private fun writeNewUserToDataBase(
         user: User
     ) {
-        databaseReference!!.child(phoneNumber).setValue(user)
+        databaseReference.child(phoneNumber).setValue(user)
     }
-
+// store new user data in session manager
     private fun writeNewUserToSeesion(
         user :User
     ) {
 
-        seesionManager!!.createSeesion(
+        seesionManager.createSeesion(
             user
         )
     }
@@ -382,4 +388,5 @@ class PhoneAuthFragment : Fragment() {
     companion object {
         private val TAG = "PhoneAuthFragment"
     }
+
 }

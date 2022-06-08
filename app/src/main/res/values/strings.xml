@@ -41,5 +41,11 @@
     <string name="profile">profile</string>
     <string name="home">home</string>
     <string name="chat">chat</string>
+    <string name="if_you_like_th_app_rate_us">If you like th app rate us</string>
+    <string name="do_you_love_this_app">Do You Love This App</string>
+    <string name="app_rate">app rate</string>
+    <string name="rate_now">Rate Now</string>
+    <string name="get_help_from_us">Get Help From Us</string>
+    <string name="call_now">Call Now</string>
 
 </resources>

@@ -1,441 +1,400 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.ProfileFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/profile_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/user_name"
-        android:textAppearance="@style/heading2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/account_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/account"
-        android:textAppearance="@style/heading3"
-        app:layout_constraintStart_toStartOf="@+id/profile_name_tv"
-        app:layout_constraintTop_toBottomOf="@+id/profile_name_tv" />
-
-    <TextView
-        android:id="@+id/help_tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/help"
-        android:textAppearance="@style/subHeading"
-        android:textColor="@color/app_background"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_name_tv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profile_name_tv" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/account_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/account_tv"
-        app:layout_constraintTop_toBottomOf="@+id/account_tv">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.ProfileFragment">
 
-        <ImageView
-            android:id="@+id/my_account_imgv"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/profile_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/user_name"
+            android:textAppearance="@style/heading2"
+            android:textColor="@color/app_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_account" />
-
-        <TextView
-            android:id="@+id/my_account_tv"
-            style="@style/smallText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/my_account"
-            android:textAppearance="@style/smallText1"
-            android:textColor="#323232"
-            app:layout_constraintStart_toEndOf="@+id/my_account_imgv"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/my_acc_discreption_tv"
+            android:id="@+id/account_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/make_changes_to_your_account"
-            android:textAppearance="@style/smallText2"
-            android:textColor="#868686"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/my_account_tv" />
-
-        <ImageView
-            android:id="@+id/back1_imgv"
-            android:layout_width="6.98dp"
-            android:layout_height="11.68dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/payment_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/account_layout"
-        app:layout_constraintTop_toBottomOf="@+id/account_layout">
-
-        <ImageView
-            android:id="@+id/payment_imgv"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/account"
+            android:textAppearance="@style/heading3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_credit_card1" />
+            app:layout_constraintTop_toBottomOf="@+id/profile_name_tv" />
 
         <TextView
-            android:id="@+id/payment_tv"
-            style="@style/smallText1"
+            android:id="@+id/help_tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/payment"
-            android:textAppearance="@style/smallText1"
-            android:textColor="#323232"
-            app:layout_constraintStart_toEndOf="@+id/payment_imgv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/payment_discreption_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mange_you_billings_and_discounts"
-            android:textAppearance="@style/smallText2"
-            android:textColor="#868686"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/payment_tv" />
-
-        <ImageView
-            android:id="@+id/back2_imgv"
-            android:layout_width="6.98dp"
-            android:layout_height="11.68dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/orders_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/payment_layout"
-        app:layout_constraintTop_toBottomOf="@+id/payment_layout">
-
-        <ImageView
-            android:id="@+id/orders_imgv"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_orders" />
-
-        <TextView
-            android:id="@+id/orders_tv"
-            style="@style/smallText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/orders"
-            android:textAppearance="@style/smallText1"
-            android:textColor="#323232"
-            app:layout_constraintStart_toEndOf="@+id/orders_imgv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/orders_discreption_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/see_your_orders_history"
-            android:textAppearance="@style/smallText2"
-            android:textColor="#868686"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/orders_tv" />
-
-        <ImageView
-            android:id="@+id/back3_imgv"
-            android:layout_width="6.98dp"
-            android:layout_height="11.68dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/notifications_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/orders_layout"
-        app:layout_constraintTop_toBottomOf="@+id/orders_layout">
-
-        <ImageView
-            android:id="@+id/notifications_imgv"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_notifications" />
-
-        <TextView
-            android:id="@+id/notifications_tv"
-            style="@style/smallText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/notifications"
-            android:textAppearance="@style/smallText1"
-            android:textColor="#323232"
-            app:layout_constraintStart_toEndOf="@+id/notifications_imgv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/notifications_discreption_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/see_your_notifications"
-            android:textAppearance="@style/smallText2"
-            android:textColor="#868686"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/notifications_tv" />
-
-        <ImageView
-            android:id="@+id/back4_imgv"
-            android:layout_width="6.98dp"
-            android:layout_height="11.68dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/help_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/notifications_layout"
-        app:layout_constraintTop_toBottomOf="@+id/notifications_layout">
-
-        <ImageView
-            android:id="@+id/help_imgv"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_support" />
-
-        <TextView
-            android:id="@+id/help_tv"
-            style="@style/smallText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/help"
-            android:textAppearance="@style/smallText1"
-            android:textColor="#323232"
-            app:layout_constraintStart_toEndOf="@+id/help_imgv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/help_discreption_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/get_help_from_app_team"
-            android:textAppearance="@style/smallText2"
-            android:textColor="#868686"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/help_tv" />
-
-        <ImageView
-            android:id="@+id/back5_imgv"
-            android:layout_width="6.98dp"
-            android:layout_height="11.68dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAppearance="@style/subHeading"
+            android:textColor="@color/app_background"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_name_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="@+id/profile_name_tv" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rate_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/help_layout"
-        app:layout_constraintTop_toBottomOf="@+id/help_layout">
-
-        <ImageView
-            android:id="@+id/rate_app_imgv"
-            android:layout_width="40dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/account_layout"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/rate_app_tv"
-            style="@style/smallText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/rate_app"
-            android:textAppearance="@style/smallText1"
-            android:textColor="#323232"
-            app:layout_constraintStart_toEndOf="@+id/rate_app_imgv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/rate_app_discreption_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/if_you_like_the_app_rate_it"
-            android:textAppearance="@style/smallText2"
-            android:textColor="#868686"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/rate_app_tv" />
-
-        <ImageView
-            android:id="@+id/back6_imgv"
-            android:layout_width="6.98dp"
-            android:layout_height="11.68dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintStart_toStartOf="@+id/account_tv"
+            app:layout_constraintTop_toBottomOf="@+id/account_tv">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/joinUs_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/rate_layout"
-        app:layout_constraintTop_toBottomOf="@+id/rate_layout">
+            <ImageView
+                android:id="@+id/my_account_imgv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_account" />
 
-        <ImageView
-            android:id="@+id/join_us_imgv"
-            android:layout_width="40dp"
+            <TextView
+                android:id="@+id/my_account_tv"
+                style="@style/smallText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/my_account"
+                android:textAppearance="@style/smallText1"
+                android:textColor="#323232"
+                app:layout_constraintStart_toEndOf="@+id/my_account_imgv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/my_acc_discreption_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/make_changes_to_your_account"
+                android:textAppearance="@style/smallText2"
+                android:textColor="#868686"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/my_account_tv" />
+
+            <ImageView
+                android:id="@+id/back1_imgv"
+                android:layout_width="6.98dp"
+                android:layout_height="11.68dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/payment_layout"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/join_us_tv"
-            style="@style/smallText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/join_us"
-            android:textAppearance="@style/smallText1"
-            android:textColor="#323232"
-            app:layout_constraintStart_toEndOf="@+id/join_us_imgv"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/join_us_discreption_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/join_in_second_captains"
-            android:textAppearance="@style/smallText2"
-            android:textColor="#868686"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/join_us_tv" />
-
-        <ImageView
-            android:id="@+id/back7_imgv"
-            android:layout_width="6.98dp"
-            android:layout_height="11.68dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/account_layout"
+            app:layout_constraintTop_toBottomOf="@+id/account_layout">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/payment_imgv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_credit_card1" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/sign_out_layout"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="@+id/joinUs_layout"
-        app:layout_constraintTop_toBottomOf="@+id/joinUs_layout">
+            <TextView
+                android:id="@+id/payment_tv"
+                style="@style/smallText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/payment"
+                android:textAppearance="@style/smallText1"
+                android:textColor="#323232"
+                app:layout_constraintStart_toEndOf="@+id/payment_imgv"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/sign_out_imgv"
-            android:layout_width="40dp"
+            <TextView
+                android:id="@+id/payment_discreption_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mange_you_billings_and_discounts"
+                android:textAppearance="@style/smallText2"
+                android:textColor="#868686"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/payment_tv" />
+
+            <ImageView
+                android:id="@+id/back2_imgv"
+                android:layout_width="6.98dp"
+                android:layout_height="11.68dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notifications_layout"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_logout1" />
-
-        <TextView
-            android:id="@+id/sign_out_tv"
-            style="@style/smallText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/log_out"
-            android:textAppearance="@style/smallText1"
-            android:textColor="@color/red"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/sign_out_imgv"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/payment_layout"
+            app:layout_constraintTop_toBottomOf="@+id/payment_layout">
+
+            <ImageView
+                android:id="@+id/notifications_imgv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_notifications" />
+
+            <TextView
+                android:id="@+id/notifications_tv"
+                style="@style/smallText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/notifications"
+                android:textAppearance="@style/smallText1"
+                android:textColor="#323232"
+                app:layout_constraintStart_toEndOf="@+id/notifications_imgv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/notifications_discreption_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_your_notifications"
+                android:textAppearance="@style/smallText2"
+                android:textColor="#868686"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/notifications_tv" />
+
+            <ImageView
+                android:id="@+id/back4_imgv"
+                android:layout_width="6.98dp"
+                android:layout_height="11.68dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/help_layout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/notifications_layout"
+            app:layout_constraintTop_toBottomOf="@+id/notifications_layout">
+
+            <ImageView
+                android:id="@+id/help_imgv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_support" />
+
+            <TextView
+                android:id="@+id/help_tv"
+                style="@style/smallText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/help"
+                android:textAppearance="@style/smallText1"
+                android:textColor="#323232"
+                app:layout_constraintStart_toEndOf="@+id/help_imgv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/help_discreption_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_help_from_app_team"
+                android:textAppearance="@style/smallText2"
+                android:textColor="#868686"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/help_tv" />
+
+            <ImageView
+                android:id="@+id/back5_imgv"
+                android:layout_width="6.98dp"
+                android:layout_height="11.68dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rate_layout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/help_layout"
+            app:layout_constraintTop_toBottomOf="@+id/help_layout">
+
+            <ImageView
+                android:id="@+id/rate_app_imgv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_star_24" />
+
+            <TextView
+                android:id="@+id/rate_app_tv"
+                style="@style/smallText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/rate_app"
+                android:textAppearance="@style/smallText1"
+                android:textColor="#323232"
+                app:layout_constraintStart_toEndOf="@+id/rate_app_imgv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rate_app_discreption_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/if_you_like_the_app_rate_it"
+                android:textAppearance="@style/smallText2"
+                android:textColor="#868686"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/rate_app_tv" />
+
+            <ImageView
+                android:id="@+id/back6_imgv"
+                android:layout_width="6.98dp"
+                android:layout_height="11.68dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/joinUs_layout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/rate_layout"
+            app:layout_constraintTop_toBottomOf="@+id/rate_layout">
+
+            <ImageView
+                android:id="@+id/join_us_imgv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_swap_horiz_24" />
+
+            <TextView
+                android:id="@+id/join_us_tv"
+                style="@style/smallText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/join_us"
+                android:textAppearance="@style/smallText1"
+                android:textColor="#323232"
+                app:layout_constraintStart_toEndOf="@+id/join_us_imgv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/join_us_discreption_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/join_in_second_captains"
+                android:textAppearance="@style/smallText2"
+                android:textColor="#868686"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/join_us_tv" />
+
+            <ImageView
+                android:id="@+id/back7_imgv"
+                android:layout_width="6.98dp"
+                android:layout_height="11.68dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sign_out_layout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="@+id/joinUs_layout"
+            app:layout_constraintTop_toBottomOf="@+id/joinUs_layout">
+
+            <ImageView
+                android:id="@+id/sign_out_imgv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_logout1" />
+
+            <TextView
+                android:id="@+id/sign_out_tv"
+                style="@style/smallText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/log_out"
+                android:textAppearance="@style/smallText1"
+                android:textColor="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sign_out_imgv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

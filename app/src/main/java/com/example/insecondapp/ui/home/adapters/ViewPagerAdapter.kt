@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.insecondapp.R
 import kotlinx.android.synthetic.main.home_image_item.view.*
 
+
 class ViewPagerAdapter (
     val images : List<Int>
         ) : RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {

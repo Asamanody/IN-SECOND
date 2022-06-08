@@ -29,18 +29,5 @@ class HomeFragment : Fragment() {
 
     }
 
-/* fun initImages() :List<Int>{
-        val images = listOf(
-            R.drawable.image1,
-            R.drawable.second
-           )
-        return images
-    }
-    fun initViewPager(){
-        val viewPagerAdapter= ViewPagerAdapter(initImages())
-        val viewPager = mBinding.viewPager
-        viewPager.adapter= viewPagerAdapter
-        val indicator = mBinding.indicator
-        indicator.setViewPager(viewPager)
-    }*/
+
 }

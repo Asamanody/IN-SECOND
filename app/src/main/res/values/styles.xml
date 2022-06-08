@@ -87,4 +87,5 @@
         <item name="android:textSize">10sp</item>
         <item name="android:lineHeight" tools:targetApi="p">16sp</item>
     </style>
+
 </resources>
